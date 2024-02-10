@@ -1,0 +1,2896 @@
+{
+	"info": {
+		"_postman_id": "c8f8819b-13f8-4e3d-ad3d-3a608b1ccb38",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28366690"
+	},
+	"item": [
+		{
+			"name": "blogPosts",
+			"item": [
+				{
+					"name": "create blogpost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"BlogPosts\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "already exists posts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Blog Post1\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"post"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-huVxveZciw3cZKqQ8g/6M7dvv3g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:24:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Already exists title, need unique title\"\n}"
+						},
+						{
+							"name": "create blogPosts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Post\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"post"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-lrPqBMi/0Y9XPwo34nkpJH4J1Vc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:36:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post created successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Post\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"Post\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"post"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1555"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"613-sBaxoqiO6Hh91ZFpF0ShU81KZhc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:40:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"65c75fc05df4ed07993f2d0b\",\n        \"title\": \"Post\",\n        \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\",\n        \"createdAt\": \"2024-02-10T11:36:32.829Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65c760a8c3ff60b4c1511d6c\",\n        \"title\": \"BlogPost\",\n        \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\",\n        \"createdAt\": \"2024-02-10T11:40:24.577Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getbyId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/post/65c75fc05df4ed07993f2d0b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post",
+								"65c75fc05df4ed07993f2d0b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getbyId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/post/65c75fc05df4ed07993f2d0b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"post",
+										"65c75fc05df4ed07993f2d0b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "774"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"306-rv1KIHgn3A2L0gR25iqPpJavjOw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:41:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"65c75fc05df4ed07993f2d0b\",\n    \"title\": \"Post\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\",\n    \"createdAt\": \"2024-02-10T11:36:32.829Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "updateByid",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"BlogPosts\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/post/65c75fc05df4ed07993f2d0b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post",
+								"65c75fc05df4ed07993f2d0b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateById",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"BlogPosts\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/post/65c75fc05df4ed07993f2d0b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"post",
+										"65c75fc05df4ed07993f2d0b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-QqWfNKsZMTvF7Ni3OK02HCJRIuc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:43:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post details updated successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/post/65c7619846ad84e4ac8d3c70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post",
+								"65c7619846ad84e4ac8d3c70"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/post/65c7619846ad84e4ac8d3c70",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"post",
+										"65c7619846ad84e4ac8d3c70"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-umfKGdI4GyD4b4fdkTeAKjUGzk4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:44:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post details deleted successfully!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "create comments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"postId\":\"65c760a8c3ff60b4c1511d6c\",\n    \"comment\": \"very nice\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create comments",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"postId\":\"65c760a8c3ff60b4c1511d6c\",\n    \"comment\": \"very nice\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/comments/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"comments",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-PIbWeFEj/t2hORLzszHmAVoQMyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:50:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Comments created successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getbyId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/comments/65c760a8c3ff60b4c1511d6c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"comments",
+								"65c760a8c3ff60b4c1511d6c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getbyId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/comments/65c760a8c3ff60b4c1511d6c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"comments",
+										"65c760a8c3ff60b4c1511d6c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "283"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11b-WnyVIlZHbUxNUh9JT8fVO0HX6pY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:51:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"65c76288689adabc9aa993bf\",\n        \"postId\": \"65c760a8c3ff60b4c1511d6c\",\n        \"comment\": \"very useful\",\n        \"createdAt\": \"2024-02-10T11:48:24.150Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65c762ed97a04e1de0889162\",\n        \"postId\": \"65c760a8c3ff60b4c1511d6c\",\n        \"comment\": \"very nice\",\n        \"createdAt\": \"2024-02-10T11:50:05.150Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "updateByid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"BlogPosts\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/post/65c75fc05df4ed07993f2d0b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post",
+								"65c75fc05df4ed07993f2d0b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateById",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\":\"BlogPosts\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet justo nec mi malesuada, id fringilla dui sollicitudin. Nullam vitae nulla quis libero malesuada sodales. Nam hendrerit augue nec elit lacinia, a congue dui efficitur. Cras vel nibh id quam eleifend placerat. Fusce ullamcorper, magna nec luctus ultricies, turpis nisi varius dui, vel ultrices metus nisl vel ligula. Morbi nec metus at magna scelerisque feugiat. Proin viverra, justo et rhoncus vulputate, elit nisl volutpat nisi, nec congue lorem sem in est. Aenean dapibus laoreet felis, non dictum libero laoreet vel. Nulla facilisi. Aliquam fringilla tristique neque, sed eleifend sem varius et\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/post/65c75fc05df4ed07993f2d0b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"post",
+										"65c75fc05df4ed07993f2d0b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-QqWfNKsZMTvF7Ni3OK02HCJRIuc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:43:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post details updated successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/post/65c7619846ad84e4ac8d3c70",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post",
+								"65c7619846ad84e4ac8d3c70"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/post/65c7619846ad84e4ac8d3c70",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"post",
+										"65c7619846ad84e4ac8d3c70"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-umfKGdI4GyD4b4fdkTeAKjUGzk4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 11:44:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post details deleted successfully!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1Nzg4NDEsImV4cCI6MTcwNzY2NTI0MX0.YvXRzpcSA-csLbNtohMtlU7EeO8hStk5foGuit-69_w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "User",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "two",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "usertwo",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "usertwo@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9102321299",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "User",
+									"type": "text"
+								},
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/home/sasikala/Downloads/flowers.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "Admin",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "Tech",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "techAdmin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "techadmin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "9876543210",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Admin@123",
+											"type": "text"
+										},
+										{
+											"key": "confirmPassword",
+											"value": "Admin@123",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "Admin",
+											"type": "text"
+										},
+										{
+											"key": "profileImage",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-kvn+rat5kaE+NctK2y6echQ2xBE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 12:20:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 201,\n    \"message\": \"User created successfully!!\"\n}"
+						},
+						{
+							"name": "already exists user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "Admin",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "Tech",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "techAdmin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "techadmin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "9876543210",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Admin@123",
+											"type": "text"
+										},
+										{
+											"key": "confirmPassword",
+											"value": "Admin@123",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "Admin",
+											"type": "text"
+										},
+										{
+											"key": "profileImage",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-ynK+Fus9dgFHw/5yTpiNfykdgS0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 13:36:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Failure\",\n    \"statusCode\": 409,\n    \"error\": \"Username already exists\"\n}"
+						},
+						{
+							"name": "create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "User",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "One",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "userone",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "userone@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "9999999999",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "User",
+											"type": "text"
+										},
+										{
+											"key": "profileImage",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-kvn+rat5kaE+NctK2y6echQ2xBE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 13:38:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 201,\n    \"message\": \"User created successfully!!\"\n}"
+						},
+						{
+							"name": "create user with profile",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1Nzg4NDEsImV4cCI6MTcwNzY2NTI0MX0.YvXRzpcSA-csLbNtohMtlU7EeO8hStk5foGuit-69_w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "User",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "two",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "usertwo",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "usertwo@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "9102321299",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "User",
+											"type": "text"
+										},
+										{
+											"key": "profileImage",
+											"type": "file",
+											"src": "/home/sasikala/Downloads/flowers.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 16:43:08 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707584289"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-kvn+rat5kaE+NctK2y6echQ2xBE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 201,\n    \"message\": \"User created successfully!!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getAll Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1NzQ0MTAsImV4cCI6MTcwNzU3NTMxMH0.JloSZbalAM9o3j3PScKS-zVb4AtbsAJUdKffoyoGsWg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "accessdenied",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1NzA2MjMsImV4cCI6MTcwNzU3MTUyM30.qYQBQ3pQN3mTxutCNDmXsx9MzFzxOvk_-dRBnjPsny8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/user/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"list"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-2415+U2wQ2X8el8aBp5oz6O0bq0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 13:12:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Failure\",\n    \"statusCode\": 403,\n    \"message\": \"Access denied! You do not have the required role!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"techadmin@gmail.com\",\n    \"password\":\"Admin@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"techadmin@gmail.com\",\n    \"password\":\"Admin@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "451"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c3-49O+ytp3tJL391FfsEctFRfeudI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 13:10:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Login Successfully\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1NzA2MjMsImV4cCI6MTcwNzU3MTUyM30.qYQBQ3pQN3mTxutCNDmXsx9MzFzxOvk_-dRBnjPsny8\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1NzA2MjMsImV4cCI6MTcwNzY1NzAyM30.E07pKAtW12JXor6Qfb1Gxjh-rG-C9Ip9AtqMf3c680Y\",\n    \"expiredAt\": 1707571523\n}"
+						}
+					]
+				},
+				{
+					"name": "current User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1NzkxNzMsImV4cCI6MTcwNzY2NTU3M30.ioN5GavoL2ETIVp6vXZ9dDPCx1PM3KCwAmAdy0MEQZ8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/currentUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"currentUser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "currentUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1NzkxNzMsImV4cCI6MTcwNzY2NTU3M30.ioN5GavoL2ETIVp6vXZ9dDPCx1PM3KCwAmAdy0MEQZ8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/user/currentUser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"currentUser"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "91"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 15:33:23 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707579742"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12a-pdCz9KTg5bcBMWYLMZueePBNTw8\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"User Details Fetched Successfully!\",\n    \"userData\": {\n        \"userId\": \"65c795f16b7866cb6485f636\",\n        \"firstName\": \"User\",\n        \"lastName\": \"One\",\n        \"email\": \"userone@gmail.com\",\n        \"username\": \"userone\",\n        \"mobileCountryCode\": \"+91\",\n        \"mobile\": \"9999999999\",\n        \"profileImage\": \"\",\n        \"role\": \"User\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getuser by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1NzkyODMsImV4cCI6MTcwNzY2NTY4M30.3CZJGil6EdHUeySVDmXC-mUpt8YEtBKqqjyF0ihDLR4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/65c795f16b7866cb6485f636",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"65c795f16b7866cb6485f636"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getuser by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1NzkyODMsImV4cCI6MTcwNzY2NTY4M30.3CZJGil6EdHUeySVDmXC-mUpt8YEtBKqqjyF0ihDLR4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/user/65c795f16b7866cb6485f636",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"65c795f16b7866cb6485f636"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "85"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 15:35:39 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707579742"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"113-9SpN1ZgAML827jgGsHsLQRxzRSU\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"User Details fetched sucessfully\",\n    \"data\": {\n        \"_id\": \"65c795f16b7866cb6485f636\",\n        \"firstName\": \"User\",\n        \"lastName\": \"One\",\n        \"email\": \"userone@gmail.com\",\n        \"username\": \"userone\",\n        \"mobileCountryCode\": \"+91\",\n        \"mobile\": \"9999999999\",\n        \"profileImage\": \"\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "changepassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1Nzk0NzUsImV4cCI6MTcwNzY2NTg3NX0.s2U_dBL-G94yjYyG0YJ-BN0GwPihYj_FszgSdshXAJo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\":\"Password@123\",\n    \"newPassword\":\"Password@1\",\n    \"confirmPassword\":\"Password@1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/changepassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"changepassword"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "incorrect password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1Nzk0NzUsImV4cCI6MTcwNzY2NTg3NX0.s2U_dBL-G94yjYyG0YJ-BN0GwPihYj_FszgSdshXAJo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\":\"\",\n    \"newPassword\":\"\",\n    \"confirmPassword\":\"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/changepassword",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"changepassword"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "80"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 15:38:57 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707579742"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-gpXAbloD3usVbsE0x3oLY+uvGlc\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Failure\",\n    \"statusCode\": 400,\n    \"message\": \"Old password is incorrect\"\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1Nzk0NzUsImV4cCI6MTcwNzY2NTg3NX0.s2U_dBL-G94yjYyG0YJ-BN0GwPihYj_FszgSdshXAJo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\":\"password@123\",\n    \"newPassword\":\"Password@1\",\n    \"confirmPassword\":\"Password@1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/changepassword",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"changepassword"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "72"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 15:40:05 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707579742"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-gjYKIqUX/UsQ38QVugiCcShBNpM\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"Password was updated successfully\"\n}"
+						},
+						{
+							"name": "error req",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1Nzk0NzUsImV4cCI6MTcwNzY2NTg3NX0.s2U_dBL-G94yjYyG0YJ-BN0GwPihYj_FszgSdshXAJo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\":\"Password@123\",\n    \"newPassword\":\"Password@123\",\n    \"confirmPassword\":\"Password@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/changepassword",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"changepassword"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 15:42:30 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707580651"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5f-UlaPQjwteqq2SCWbJL83UgrQB8U\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Failure\",\n    \"statusCode\": 400,\n    \"message\": \"Old password should not same as new password!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "User",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "One",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user_one",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "userone@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9999999999",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "User",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/65c795f16b7866cb6485f636",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"65c795f16b7866cb6485f636"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateUser",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "User",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "One",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "user_one",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "userone@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "9999999999",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "User",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/65c795f16b7866cb6485f636",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"65c795f16b7866cb6485f636"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 16:37:59 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707583980"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-8QmJNU4mODPP1aWnWa+cz2q1/ao\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"User updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "User",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "One",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user_one",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "userone@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9999999999",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "User",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/65c795f16b7866cb6485f636",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"65c795f16b7866cb6485f636"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateUser",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "User",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "One",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "user_one",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "userone@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "9999999999",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "User",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/65c795f16b7866cb6485f636",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"65c795f16b7866cb6485f636"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 16:37:59 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707583980"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-8QmJNU4mODPP1aWnWa+cz2q1/ao\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"User updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteUser profile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/image/65c795f16b7866cb6485f636",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"image",
+								"65c795f16b7866cb6485f636"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateUser",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "User",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "One",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "user_one",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "userone@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "9999999999",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "User",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/65c795f16b7866cb6485f636",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"65c795f16b7866cb6485f636"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 16:37:59 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707583980"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-8QmJNU4mODPP1aWnWa+cz2q1/ao\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"User updated successfully\"\n}"
+						},
+						{
+							"name": "deleteUser profile",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/image/65c795f16b7866cb6485f636",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"image",
+										"65c795f16b7866cb6485f636"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "94"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 16:47:18 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707584517"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-Sm01BpgZ9TwKPY+1vDc8TguvZRk\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"ProfileImage deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update user status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1ODM3MjEsImV4cCI6MTcwNzY3MDEyMX0.9wtuR-1ctTxjjQ-s0i9ibbTSH_hsVQ-URSFa55ELIug",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"Inactive\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/status/65c795f16b7866cb6485f636",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"status",
+								"65c795f16b7866cb6485f636"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateUser",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3OTVmMTZiNzg2NmNiNjQ4NWY2MzYiLCJpYXQiOjE3MDc1ODI4NTksImV4cCI6MTcwNzY2OTI1OX0.InrhKCiUHnninduOIfTbjLh5chipe_JR8oD9gvkVX9Q",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "firstName",
+											"value": "User",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "One",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "user_one",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "userone@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "9999999999",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "role",
+											"value": "User",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/65c795f16b7866cb6485f636",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"65c795f16b7866cb6485f636"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 16:37:59 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707583980"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-8QmJNU4mODPP1aWnWa+cz2q1/ao\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"User updated successfully\"\n}"
+						},
+						{
+							"name": "deleteUser profile Copy",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM3NjlmMzM5ZGNiNjA4Y2JjMDU0MzkiLCJpYXQiOjE3MDc1ODM3MjEsImV4cCI6MTcwNzY3MDEyMX0.9wtuR-1ctTxjjQ-s0i9ibbTSH_hsVQ-URSFa55ELIug",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":\"Inactive\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/status/65c795f16b7866cb6485f636",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"status",
+										"65c795f16b7866cb6485f636"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "90"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Feb 2024 16:48:57 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1707584517"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-s8W7JWuWLcqYwoHAlQ6UWGl/6cI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"statusCode\": 200,\n    \"message\": \"User status updated successfully!\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
