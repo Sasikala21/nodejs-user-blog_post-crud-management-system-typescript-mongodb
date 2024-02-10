@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import * as bcrypt from 'bcryptjs';
 
 const securePassword = async (password: string): Promise<string> => {
     const salt: string = await bcrypt.genSalt(8);

@@ -1,7 +1,7 @@
 import UserModel from '../models/userModel'; 
 
 const userData = [
-    { firstName: 'Admin', lastName: 'Tech', email: 'techadmin@example.com', username: 'techAdmin', password: 'Admin@123', mobile: 9089089013, role: 'Admin' },
+    { firstName: 'Admin', lastName: 'Tech', email: 'techadmin@example.com', username: 'techAdmin', password: 'Admin@123', mobile: 9089089013, role: 'Admin', status: 'Active' },
 ];
 
 const seedUsers = async () => {

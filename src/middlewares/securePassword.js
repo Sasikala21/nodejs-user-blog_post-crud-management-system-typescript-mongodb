@@ -36,27 +36,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var userModel_1 = require("../models/userModel");
-var userData = [
-    { firstName: 'Admin', lastName: 'Tech', email: 'techadmin@example.com', username: 'techAdmin', password: 'Admin@123', mobile: 9089089013, role: 'Admin', status: 'Active' },
-];
-var seedUsers = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var error_1;
+var bcrypt = require("bcryptjs");
+var securePassword = function (password) { return __awaiter(void 0, void 0, void 0, function () {
+    var salt, hashedPassword;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, userModel_1.default.create(userData)];
+            case 0: return [4 /*yield*/, bcrypt.genSalt(8)];
             case 1:
-                _a.sent();
-                console.log('User data seeded successfully');
-                return [3 /*break*/, 3];
+                salt = _a.sent();
+                return [4 /*yield*/, bcrypt.hash(password, salt)];
             case 2:
-                error_1 = _a.sent();
-                console.error('Error seeding user data:', error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
+                hashedPassword = _a.sent();
+                return [2 /*return*/, hashedPassword];
         }
     });
 }); };
-seedUsers();
+exports.default = securePassword;
