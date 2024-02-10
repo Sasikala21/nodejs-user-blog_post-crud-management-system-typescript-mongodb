@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import UserModel, { IUser } from '../models/userModel';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import securePassword from '../middlewares/securePassword';
 
 // Login route
 export const login = async (req: Request, res: Response): Promise<void> => {
@@ -37,7 +36,6 @@ export const login = async (req: Request, res: Response): Promise<void> => {
             }
         }
     } catch (error) {
-        console.error(error)
         res.status(500).send({ status: 'Failure', statusCode: 500, message: 'Internal server error' });
     }
 };

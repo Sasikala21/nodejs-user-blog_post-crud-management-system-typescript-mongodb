@@ -1,5 +1,5 @@
 import express from 'express';
-import UserController from '../controllers/userController';
+import * as UserController from '../controllers/userController';
 import upload from '../middlewares/upload';
 import authJWT from '../middlewares/authJWT';
 import roleAuth from '../middlewares/roleAuth';

@@ -108,12 +108,15 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
             .limit(limitValue);
         const currentPageCount = users.length;
         res.status(200).send({
-            status: 'Success', statusCode: 200, message: 'Users Details Fetched Successfully',
+            status: 'Success',
+            statusCode: 200,
+            data: users,
             totalCount, currentPageCount, nextPageCount,
             totalPages, currentPage: page,
             nextPage: page < totalPages ? page + 1 : null,
             previousPage: page > 1 ? page - 1 : null,
-            users
+            message: 'Users Details Fetched Successfully',
+
         });
     } catch (error) {
         res.status(500).send({ status: 'Failure', statusCode: 500, message: 'Internal Server Error' });
@@ -265,6 +268,3 @@ export const changePassword = async (req: UserRequest, res: Response): Promise<v
         res.status(500).send({ status: 'Failure', statusCode: 500, message: 'Internal server error' });
     }
 };
-
-const UserController = { createOrUpdateUser, getAllUsers, getUserById, getCurrentUser, updateStatusUser, deleteUser, deleteImage, changePassword };
-export default UserController;

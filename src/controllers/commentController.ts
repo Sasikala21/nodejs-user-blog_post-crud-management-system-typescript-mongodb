@@ -1,12 +1,15 @@
 import { Request, Response } from 'express';
-import Comment, { IComment } from '../models/commentModel';
+import Comment from '../models/commentModel';
 
 export const createComment = async (req: Request, res: Response): Promise<void> => {
   try {
     const { postId, comment } = req.body;
-    const newComment: IComment = new Comment({ postId, comment });
+    const newComment = new Comment({
+      postId: postId,
+      comment: comment
+    });
     await newComment.save();
-    res.status(201).json({ message: "Comments created successfully!"});
+    res.status(201).json({ message: "Comments created successfully!" });
   } catch (error) {
     res.status(500).json({ message: 'Failed to create comment', error });
   }
@@ -15,10 +18,14 @@ export const createComment = async (req: Request, res: Response): Promise<void> 
 export const getCommentsByPostId = async (req: Request, res: Response): Promise<void> => {
   try {
     const postId = req.params.postId;
-    const comments: IComment[] = await Comment.find({ postId });
-    res.status(200).json({ data: comments, message: "Comments retrieved successfully!"});
+    const comments = await Comment.find({ postId });
+    if (!comments) {
+      res.status(404).json({ data: comments, message: "Comments not found for this post!" });
+    } else {
+      res.status(200).json({ data: comments, message: "Comments retrieved successfully!" });
+    }
   } catch (error) {
-    res.status(500).json({ message: 'Failed to fetch comments', error });
+    res.status(500).json({ message: 'Failed to fetch comments' });
   }
 };
 
@@ -26,27 +33,27 @@ export const updateComment = async (req: Request, res: Response): Promise<void> 
   try {
     const commentId = req.params.id;
     const { comment } = req.body;
-    const updatedComment: IComment | null = await Comment.findByIdAndUpdate(commentId, { comment }, { new: true });
+    const updatedComment = await Comment.findByIdAndUpdate(comment, { comment }, { new: true });
     if (updatedComment) {
-      res.status(200).json({ message: "Comment updated successfully!"});
+      res.status(200).json({ message: "Comment updated successfully!" });
     } else {
       res.status(404).json({ message: 'Comment not found' });
     }
   } catch (error) {
-    res.status(500).json({ message: 'Failed to update comment', error });
+    res.status(500).json({ message: 'Failed to update comment!' });
   }
 };
 
 export const deleteComment = async (req: Request, res: Response): Promise<void> => {
   try {
     const commentId = req.params.id;
-    const deletedComment: IComment | null = await Comment.findByIdAndDelete(commentId);
+    const deletedComment = await Comment.findByIdAndDelete(commentId);
     if (deletedComment) {
-      res.status(200).json({ message: "Comments deleted successfully!"});
+      res.status(200).json({ message: "Comments deleted successfully!" });
     } else {
       res.status(404).json({ message: 'Comment not found' });
     }
   } catch (error) {
-    res.status(500).json({ message: 'Failed to delete comment', error });
+    res.status(500).json({ message: 'Failed to delete comment' });
   }
 };
