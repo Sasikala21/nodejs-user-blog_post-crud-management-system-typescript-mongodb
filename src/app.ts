@@ -8,7 +8,7 @@ import postRoutes from './routes/postRoutes';
 import commentRoutes from './routes/commentRoutes';
 
 const app = express();
-const MONGO_URI = 'mongodb://localhost:27017';
+const MONGO_URI = 'mongodb://localhost:27017/';
 
 mongoose.connect(MONGO_URI)
     .then(() => {

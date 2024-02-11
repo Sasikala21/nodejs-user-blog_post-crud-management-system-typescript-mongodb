@@ -84,6 +84,7 @@ var userSchema = new mongoose_1.Schema({
     status: {
         type: String,
         enum: ['Active', 'Inactive'],
+        default: 'Active',
     }
 }, {
     timestamps: true,

@@ -77,17 +77,7 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
         const username: string = req.query.username as string;
         const regexOptions = 'i'; // Declare $regex as a string variable with the desired options
         const regex = new RegExp(searchQuery, regexOptions); // Create a regex object with the options
-        const query: any = {
-            // $or: [
-            //     { username: regex },
-            //     { firstName: regex },
-            //     { lastName: regex },
-            //     { role: regex },
-            //     { status: regex },
-            //     { email: regex },
-            //     { mobile: regex },
-            // ]
-        };
+        const query: any = {};
         if (status) {
             query.status = new RegExp(status, regexOptions);
         }
@@ -111,6 +101,8 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
             status: 'Success',
             statusCode: 200,
             data: users,
+            page: page,
+            limit: limitValue,
             totalCount, currentPageCount, nextPageCount,
             totalPages, currentPage: page,
             nextPage: page < totalPages ? page + 1 : null,
@@ -119,6 +111,7 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
 
         });
     } catch (error) {
+        console.log(error)
         res.status(500).send({ status: 'Failure', statusCode: 500, message: 'Internal Server Error' });
     }
 };
